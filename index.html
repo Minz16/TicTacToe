@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Sieg</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body">
+    <div id="screen">
+        <div>
+            <p id="text"></p>
+        </div>
+        <div id="taste">
+            <p id="reset" onclick="reset()">Nochmal?<span>OK!</span></p>
+        </div>
+    </div>
+    <div id="front">
+        <h1>Tic Tac Toe</h1>
+        <div id="mid">
+            <div class="brett" id="brett">
+                <div class="feld" onclick="game(1)" data-cell><div class="inhalt"></div></div>
+                <div class="feld" onclick="game(2)" data-cell><div class="inhalt"></div></div>
+                <div class="feld" onclick="game(3)" data-cell><div class="inhalt"></div></div>
+                <div class="feld" onclick="game(4)" data-cell><div class="inhalt"></div></div>
+                <div class="feld" onclick="game(5)" data-cell><div class="inhalt"></div></div>
+                <div class="feld" onclick="game(6)" data-cell><div class="inhalt"></div></div>
+                <div class="feld" onclick="game(7)" data-cell><div class="inhalt"></div></div>
+                <div class="feld" onclick="game(8)" data-cell><div class="inhalt"></div></div>
+                <div class="feld" onclick="game(9)" data-cell><div class="inhalt"></div></div>
+            </div>
+        </div>
+    </div>
+    <p id="maker">Diese Website wurde von <i>Minzin</i> erstellt</p>
+    <script src="script.js" defer></script>
+
+
+</body>
+
+</html>

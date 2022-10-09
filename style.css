@@ -1,0 +1,175 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin-top: 30%;
+    background-color: #333333;
+}
+
+.brett {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    width: 300px;
+    height: 300px;
+}
+
+.feld {
+    border: 1px solid #faebd7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    /*background-color: white;*/
+    cursor: pointer;
+}
+
+#mid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #faebd7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+}
+
+p {
+    text-align: center;
+    color: antiquewhite;
+    margin-top: 30%;
+    margin-bottom: 8%;
+}
+
+#maker {
+    position: fixed;
+    bottom: 20px;
+    left: 30%;
+    right: 30%;
+    font-size: 17px;
+    color: hsl(37, 94%, 80%);
+}
+
+#text {
+    font-size: 30px;
+}
+
+button {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#taste {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reset {
+    margin: 0;
+    outline: 0;
+    padding: 25px 40px 25px 40px;
+    background-color: hsl(240, 1%, 27%);
+    position: relative;
+}
+
+#reset span {
+    color: hsl(0, 0%, 30%);
+    font-size: 20px;
+    border-top: 10px;
+    position: absolute;
+    display: block;
+    background: hsl(37, 94%, 75%);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.25s;
+}
+
+#reset:hover span {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.25s;
+}
+
+
+#screen {
+    /*100 vh, 100vw*/
+    width: 0;
+    height: 0;
+}
+
+/*.inhalt.kreuz {
+    height: 100px;
+    width: 100px;
+    border-radius: 0px;
+    position: relative;
+}
+
+.inhalt.kreuz:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: "\274c";
+    font-size: 50px;
+    line-height: 100px;
+    text-align: center;
+}
+*/
+.inhalt.kreuz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inhalt.kreuz::before,
+.inhalt.kreuz::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 75px;
+    background-color: #faebd7;
+}
+
+.inhalt.kreuz::before {
+    transform: rotate(45deg);
+}
+
+.inhalt.kreuz::after {
+    transform: rotate(-45deg);
+}
+
+
+
+.inhalt.kreis {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 5px #faebd7;
+    background-color: none;
+}
+
+#front {
+    /*display: none;*/
+}
