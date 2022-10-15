@@ -4,10 +4,9 @@ const screen = document.getElementById("screen");
 const text = document.getElementById("text");
 const inhalt = document.getElementsByClassName("inhalt");
 const taste = document.getElementById("reset");
-const alles = document.getElementById("front")
-const body = document.getElementsByTagName("body")
+const alles = document.getElementById("front");
+const body = document.getElementsByTagName("body");
 
-//feld[0].style.backgroundColor="black";
 //[1, 2, 3]
 //[4, 5, 6]
 //[7, 8, 9]
@@ -34,6 +33,8 @@ startup()
 function reset () {
     for (let i=0; i<=8; i++) {
         feld[i].setAttribute("onclick", "game("+ (i+1)+ ")")
+        feld[i].setAttribute("onmouseover", "hover("+ (i+1)+ ")")
+        feld[i].setAttribute("onmouseout", "hover("+ (i+11)+ ")")
         inhalt[i].setAttribute("class", "inhalt")
     }
     karteX = []
@@ -59,13 +60,13 @@ function compare(x, y) {
     var k=0;
     var Sieger=false;
     for(let et in win) {
-        console.log(et)
+        //console.log(et)
         k=0;
         for (let num of x) {
             //console.log(num)
             //console.log("INdex " + x.indexOf(num))
             if (win[et].includes(num)) {
-                console.log("true")
+                //console.log("true")
                 k++;
             };
         };
@@ -113,12 +114,16 @@ var zug = true;
 function game(x){
     if (zug) {
         feld[x-1].setAttribute("onclick", "")
+        feld[x-1].setAttribute("onmouseover", "")
+        feld[x-1].setAttribute("onmouseout", "")
         inhalt[x-1].setAttribute("class", "inhalt kreuz")
         karteX.push(x);
         compare(karteX, "x");
         zug = false;
     } else {
         feld[x-1].setAttribute("onclick", "")
+        feld[x-1].setAttribute("onmouseover", "")
+        feld[x-1].setAttribute("onmouseout", "")
         inhalt[x-1].setAttribute("class", "inhalt kreis")
         karteG.push(x);
         compare(karteG, "g")
@@ -130,7 +135,22 @@ function game(x){
 
     if (kartevoll.length == 9) {
         ende("tie");
-        console.log("X ist " + karteX);
-        console.log("G ist " + karteG);
+        //console.log("X ist " + karteX);
+        //console.log("G ist " + karteG);
+    }
+}
+
+function hover(x) {
+    if (x<=10) {
+        //feld[x-1].style.backgroundColor="red";
+        //inhalt[x-1].setAttribute("class", "inhalt graukreuz")
+        if (zug) {
+            inhalt[x-1].setAttribute("class", "inhalt graukreuz")
+        } else {
+            inhalt[x-1].setAttribute("class", "inhalt graukreis")
+        };
+    } else {
+        //feld[x-11].style.backgroundColor="";
+        inhalt[x-11].setAttribute("class", "inhalt")
     }
 }
