@@ -1,12 +1,40 @@
+:root {
+    --rund: 5px;
+}
+
+::selection {
+    background-color: #aa8e6a;
+}
+
 * {
     padding: 0;
     margin: 0;
 }
 
-body {
-    margin-top: clamp(200px, 30%, 600px);
+#body {
+    margin-top: clamp(200px, 30%, 400px);
     /*margin-top: 30%;*/
     background-color: #333333;
+}
+
+.punkte {
+    /*display: flex;*/
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #faebd7;
+    top: 60px;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: hsl(240, 1%, 27%);
+    border-radius: 0 var(--rund) var(--rund) 0;
+}
+
+.punkte:nth-of-type(2) {
+    border-radius: var(--rund) 0 0 var(--rund);
+    right: 0;
 }
 
 .brett {
@@ -172,7 +200,7 @@ button {
 }
 
 /*hover kreuz und kreis*/
-
+/*hwb(0 61% 39%)*/
 .inhalt.graukreuz {
     display: flex;
     justify-content: center;
@@ -185,7 +213,7 @@ button {
     content: "";
     width: 10px;
     height: 75px;
-    background-color: hwb(0 61% 39%);
+    background-color: hsl(240, 1%, 27%);
 }
 
 .inhalt.graukreuz::before {
@@ -200,7 +228,7 @@ button {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: solid 5px hwb(0 61% 39%);
+    border: solid 5px hsl(240, 1%, 27%);
     background-color: none;
 }
 

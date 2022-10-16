@@ -2,15 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Minzin">
+    <meta name="description" content="Website zum lokelen Spielen von TicTacToe">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./favicon_io/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./ressources/favicon.ico">
     <title>Tic Tac Sieg</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="body">
+    <div class="punkte">0</div>
+    <div class="punkte">0</div>
     <div id="screen">
         <div>
             <p id="text"></p>
@@ -35,7 +39,7 @@
             </div>
         </div>
     </div>
-    <p id="maker">Diese Website wurde von <i>Minzin</i> erstellt</p>
+    <p id="maker">Diese Website wurde von <i onclick="anzeige()">Minzin</i> erstellt</p>
     <script src="script.js" defer></script>
 
 

@@ -6,6 +6,7 @@ const inhalt = document.getElementsByClassName("inhalt");
 const taste = document.getElementById("reset");
 const alles = document.getElementById("front");
 const body = document.getElementsByTagName("body");
+const punkte = document.getElementsByClassName("punkte");
 
 //[1, 2, 3]
 //[4, 5, 6]
@@ -79,6 +80,10 @@ function compare(x, y) {
     };
 }
 
+//Siegespunkte
+var sX=0;
+var sG=0;
+
 function ende (ergeb) {
     for (let i=0; i<=8; i++) {
         feld[i].setAttribute("onclick", "")
@@ -92,8 +97,12 @@ function ende (ergeb) {
 
 
     if (ergeb == "x") {
+        sX++;
+        punkte[0].innerHTML=sX
         text.innerHTML="X hat Gewonnen!"
     } else if (ergeb == "g") {
+        sG++;
+        punkte[1].innerHTML=sG
         text.innerHTML="Kreis hat Gewonnen!"
     } else if (ergeb == "tie") {
     text.innerHTML="Unentschieden!"
@@ -130,8 +139,8 @@ function game(x){
         zug = true;
     }
     kartevoll.push(x);
-    console.log(kartevoll);
-    console.log(kartevoll.length)
+    //console.log(kartevoll);
+    //console.log(kartevoll.length)
 
     if (kartevoll.length == 9) {
         ende("tie");
@@ -154,3 +163,26 @@ function hover(x) {
         inhalt[x-11].setAttribute("class", "inhalt")
     }
 }
+
+var togglepunkte = true;
+var weg = 0;
+const anzeige = () => {
+    weg++;
+    if (weg==2) {
+        weg=0;
+        console.log("Aktueller Stand lautet, X: ${sX} O: ${sG}");
+        sX=0;
+        sG=0;
+        punkte[0].innerHTML=sX
+        punkte[1].innerHTML=sG
+    }
+    if (togglepunkte) {
+        punkte[0].style.display="flex";
+        punkte[1].style.display="flex";
+        togglepunkte=false;
+    } else {
+        punkte[0].style.display="none";
+        punkte[1].style.display="none";
+        togglepunkte=true;
+    }
+};
