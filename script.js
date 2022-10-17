@@ -50,7 +50,7 @@ function reset () {
     alles.style.display="";
     screen.style.height="0";
     screen.style.width="0";
-    body[0].style.margin="30% 0 0 0";
+    body[0].style.margin="clamp(200px, 30%, 400px) 0 0 0";
     body[0].style.backgroundColor="#333333";
     taste.style.display="none";
 }
@@ -77,6 +77,8 @@ function compare(x, y) {
     };
     if (Sieger) {
         ende(y);
+    } else if (kartevoll.length == 9) {
+        ende("tie");
     };
 }
 
@@ -139,14 +141,6 @@ function game(x){
         zug = true;
     }
     kartevoll.push(x);
-    //console.log(kartevoll);
-    //console.log(kartevoll.length)
-
-    if (kartevoll.length == 9) {
-        ende("tie");
-        //console.log("X ist " + karteX);
-        //console.log("G ist " + karteG);
-    }
 }
 
 function hover(x) {
