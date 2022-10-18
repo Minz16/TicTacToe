@@ -50,7 +50,7 @@ function reset () {
     alles.style.display="";
     screen.style.height="0";
     screen.style.width="0";
-    body[0].style.margin="clamp(200px, 30%, 400px) 0 0 0";
+    body[0].style.margin="clamp(200px, 30%, 230px) 0 0 0";
     body[0].style.backgroundColor="#333333";
     taste.style.display="none";
 }
@@ -129,6 +129,7 @@ function game(x){
         feld[x-1].setAttribute("onmouseout", "")
         inhalt[x-1].setAttribute("class", "inhalt kreuz")
         karteX.push(x);
+        kartevoll.push(x);
         compare(karteX, "x");
         zug = false;
     } else {
@@ -137,10 +138,10 @@ function game(x){
         feld[x-1].setAttribute("onmouseout", "")
         inhalt[x-1].setAttribute("class", "inhalt kreis")
         karteG.push(x);
+        kartevoll.push(x);
         compare(karteG, "g")
         zug = true;
     }
-    kartevoll.push(x);
 }
 
 function hover(x) {

@@ -12,7 +12,7 @@
 }
 
 #body {
-    margin-top: clamp(200px, 30%, 400px);
+    margin-top: clamp(200px, 30%, 230px);
     /*margin-top: 30%;*/
     background-color: #333333;
 }
@@ -92,6 +92,7 @@ p {
 }
 
 #text {
+    margin-top: clamp(200px, 30%, 230px);
     font-size: 30px;
 }
 
